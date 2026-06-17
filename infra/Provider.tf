@@ -24,6 +24,7 @@ provider "kubernetes" {
 }
 
 resource "kubernetes_service" "LoadBalancer" {
+  depends_on = [module.eks]
   metadata {
     name = "load-balancer-go-api"
   }
