@@ -5,5 +5,5 @@ module "homolog" {
 }
 
 output "IP_db" {
-  value = module.prod.IP
+  value = module.homolog.IP
 }
