@@ -1,4 +1,4 @@
-module "prod" {
+module "homolog" {
     source = "../../infra"
     
     cluster_name = "homolog2"
