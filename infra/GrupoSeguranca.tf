@@ -43,3 +43,12 @@ resource "aws_security_group_rule" "saida_db" {
   cidr_blocks       = ["0.0.0.0/0"] #0.0.0.0 - 255.255.255.255
   security_group_id = aws_security_group.db.id
 }
+
+resource "aws_security_group_rule" "cluster_to_nodes" {
+  type                     = "ingress"
+  from_port                = 0
+  to_port                  = 65535
+  protocol                 = "tcp"
+  source_security_group_id = module.eks.cluster_security_group_id
+  security_group_id        = aws_security_group.ssh_cluster.id
+}
