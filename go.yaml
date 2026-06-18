@@ -19,7 +19,7 @@ spec:
     
       containers: 
        - name: go
-         image: leonardosartorello/go_ci:23 
+         image: pxdrophd/go_ci:23 
          ports:
           - containerPort: 8000
          env:
